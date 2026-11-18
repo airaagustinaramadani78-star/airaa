@@ -1,0 +1,21 @@
+function handleFormSubmit(event) {
+    event.preventDefault(); // Mencegah halaman melakukan reload otomatis saat form dikirim
+    
+    // Mengambil nilai nama pelapor dari input form
+    const nama = document.getElementById('nama').value;
+    
+    // Mengambil elemen kotak alert sukses
+    const alertBox = document.getElementById('alertSukses');
+    
+    // Menampilkan kotak alert dan mengubah pesannya secara dinamis
+    alertBox.style.display = 'block';
+    alertBox.innerText = `✅ Terima kasih, ${nama}! Laporan Anda telah tercatat dalam sistem simulasi kami.`;
+    
+    // Mengosongkan kembali isi form
+    document.getElementById('formLaporan').reset();
+    
+    // Menghilangkan pesan sukses secara otomatis setelah 5 detik
+    setTimeout(() => {
+        alertBox.style.display = 'none';
+    }, 5000);
+}
