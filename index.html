@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaringFakta - Pusat Cek Fakta Pelajar</title>
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --bg-color: #f8fafc;
+            --text-color: #1e293b;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        header {
+            background: linear-gradient(135deg, #1e40af, var(--primary-color));
+            color: white;
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+        header h1 { margin: 0 0 0.5rem 0; }
+        .container {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        section {
+            background: white;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        h2 { color: var(--primary-color); border-bottom: 2px solid #e2e8f0; padding-bottom: 0.5rem; }
+        .card {
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+        .badge-hoaks { background: #fee2e2; color: #991b1b; padding: 0.2rem 0.6rem; border-radius: 4px; font-weight: bold; font-size: 0.85rem; }
+        .badge-fakta { background: #dcfce7; color: #166534; padding: 0.2rem 0.6rem; border-radius: 4px; font-weight: bold; font-size: 0.85rem; }
+        form input, form textarea, form button {
+            width: 100%;
+            padding: 0.75rem;
+            margin-top: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        form button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        form button:hover { background-color: #1d4ed8; }
+        footer { text-align: center; padding: 1.5rem; color: #64748b; font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>SaringFakta Pelajar</h1>
+        <p>Wadah edukasi dan verifikasi informasi untuk melawan hoaks di kalangan remaja.</p>
+    </header>
+
+    <div class="container">
+        <!-- Tentang Proyek -->
+        <section>
+            <h2>Tentang Website Ini</h2>
+            <p>Website ini dibuat sebagai Proyek PSAS Informatika untuk membantu pelajar dalam menyaring informasi yang beredar di media sosial. Jangan mudah percaya, selalu cek faktanya sebelum membagikannya (*Saring sebelum Sharing*)!</p>
+        </section>
+
+        <!-- Daftar Cek Fakta -->
+        <section>
+            <h2>Draf & Verifikasi Isu Terbaru</h2>
+            
+            <div class="card">
+                <span class="badge-hoaks">HOAKS</span>
+                <h3>Klaim Libur Sekolah 2 Minggu Karena Perubahan Cuaca Ekstrem</h3>
+                <p><strong>Fakta:</strong> Berita yang beredar di grup WhatsApp ini tidak bersumber dari Dinas Pendidikan setempat. Pastikan selalu mengecek situs resmi sekolah atau instansi terkait.</p>
+            </div>
+
+            <div class="card">
+                <span class="badge-fakta">FAKTA</span>
+                <h3>Pendaftaran Beasiswa Pelajar Berprestasi Dibuka Bulan Depan</h3>
+                <p><strong>Fakta:</strong> Informasi ini valid dan bersumber langsung dari portal resmi kementerian pendidikan.</p>
+            </div>
+        </section>
+
+        <!-- Formulir Laporan -->
+        <section>
+            <h2>Laporkan Berita Mencurigakan</h2>
+            <p>Menemukan berita yang meragukan? Laporkan di sini agar kami bantu verifikasi. <em>(Catatan: Jangan masukkan data pribadi yang sensitif).</em></p>
+            <form id="formLaporan" onsubmit="kirimLaporan(event)">
+                <label for="nama">Nama Pelapor (Nama Panggilan/Inisial):</label>
+                <input type="text" id="nama" required placeholder="Contoh: Budi">
+
+                <label for="linkBerita">Tautan / Judul Berita:</label>
+                <input type="text" id="linkBerita" required placeholder="Tuliskan judul atau link berita yang mencurigakan">
+
+                <label for="alasan">Kenapa kamu anggap ini hoaks?</label>
+                <textarea id="alasan" rows="3" required placeholder="Jelaskan secara singkat..."></textarea>
+
+                <button type="submit">Kirim Laporan</button>
+            </form>
+            <p id="pesanSukses" style="color: green; font-weight: bold; display: none;">Terima kasih! Laporan berhasil disimulasikan terkirim.</p>
+        </section>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Proyek TIK Kelas XI - SaringFakta</p>
+    </footer>
+
+    <script>
+        function kirimLaporan(event) {
+            event.preventDefault(); // Mencegah halaman reload otomatis
+            
+            // Simulasi aksi saat tombol dikirim
+            const nama = document.getElementById('nama').value;
+            alert(`Terima kasih ${nama}! Laporan kamu telah diterima dalam sistem simulasi.`);
+            
+            // Reset form dan tampilkan pesan sukses
+            document.getElementById('formLaporan').reset();
+            document.getElementById('pesanSukses').style.display = 'block';
+        }
+    </script>
+
+</body>
+</html>
