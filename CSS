@@ -1,0 +1,157 @@
+:root {
+    --primary: #1d4ed8;
+    --primary-dark: #1e40af;
+    --bg-main: #f1f5f9;
+    --card-bg: #ffffff;
+    --text-main: #0f172a;
+    --text-muted: #475569;
+}
+
+* { 
+    box-sizing: border-box; 
+    margin: 0; 
+    padding: 0; 
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+    color: white;
+    padding: 3rem 1rem;
+    text-align: center;
+}
+
+header h1 { 
+    font-size: 2.2rem; 
+    margin-bottom: 0.5rem; 
+}
+
+header p { 
+    font-size: 1.1rem; 
+    opacity: 0.9; 
+}
+
+.container {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+section {
+    background: var(--card-bg);
+    padding: 2rem;
+    margin-bottom: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: var(--primary);
+    border-bottom: 2px solid #e2e8f0;
+    padding-bottom: 0.5rem;
+    margin-bottom: 1.2rem;
+    font-size: 1.5rem;
+}
+
+.grid-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.info-card, .news-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 1.2rem;
+}
+
+.badge {
+    display: inline-block;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    font-weight: bold;
+    font-size: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.badge-hoaks { 
+    background: #fee2e2; 
+    color: #991b1b; 
+}
+
+.badge-fakta { 
+    background: #dcfce7; 
+    color: #166534; 
+}
+
+.badge-tips { 
+    background: #e0f2fe; 
+    color: #0369a1; 
+}
+
+ul { 
+    padding-left: 1.2rem; 
+    margin-top: 0.5rem; 
+}
+
+li { 
+    margin-bottom: 0.5rem; 
+    color: var(--text-muted); 
+}
+
+form label {
+    display: block;
+    font-weight: 600;
+    margin-top: 1rem;
+    margin-bottom: 0.3rem;
+}
+
+form input, form textarea, form select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+    font-family: inherit;
+}
+
+form button {
+    margin-top: 1.5rem;
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.2s;
+}
+
+form button:hover { 
+    background-color: var(--primary-dark); 
+}
+
+.alert-sukses {
+    margin-top: 1rem;
+    padding: 1rem;
+    background: #dcfce7;
+    color: #166534;
+    border-radius: 6px;
+    display: none;
+    font-weight: 500;
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
